@@ -40,10 +40,10 @@ void Print2DArray(int[,] array)
 void FindElementArray(int[,] array)
 {
     Console.Write("Введите индекс искомого числа (через запятую): ");
-    string [] find = Console.ReadLine().Split(',');
+    string[] find = Console.ReadLine().Split(',');
     int i = Convert.ToInt32(find[0]);
     int j = Convert.ToInt32(find[1]);
-    if (i > array.GetLength(0) || j > array.GetLength(1))
+    if (i < 0 || i > array.GetLength(0) || j < 0 || j > array.GetLength(1))
         Console.WriteLine("Tакого числа нет");
     else
     {
@@ -53,5 +53,6 @@ void FindElementArray(int[,] array)
 
 
 int[,] massiv = Fill2DArray();
+Console.WriteLine($"Двумерный массив {rows} x {column} : ");
 Print2DArray(massiv);
 FindElementArray(massiv);
