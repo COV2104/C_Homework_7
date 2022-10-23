@@ -37,7 +37,7 @@ void Print2DArray(int[,] array)
 
 void AveregeColumnArray(int [,] array)
 {
-    int[] sum = new int[column];
+    int[] sum = new int[array.GetLength(1)];
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
@@ -55,6 +55,7 @@ void AveregeColumnArray(int [,] array)
 
 
 int[,] massiv = Fill2DArray();
+Console.WriteLine($"Двумерный массив {rows} x {column} : ");
 Print2DArray(massiv);
 Console.WriteLine();
 Console.WriteLine("Среднее арифметическое элементов в каждом столбце:");;
